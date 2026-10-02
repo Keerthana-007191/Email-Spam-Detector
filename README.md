@@ -1,20 +1,9 @@
----
-title: Email Spam Detector
-emoji: 📧
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.40.0
-python_version: "3.12"
-app_file: app.py
-pinned: false
----
+
 
 # 📧 Email Spam Detector
 
 An end-to-end NLP and machine-learning project that classifies emails as **spam** or **legitimate**, with a Streamlit web app.
-
-**Live demo:** _add your Hugging Face Space link here_
+**Live demo:** [Try Email Spam Detector](https://email-spam-detector-abcdefgh.streamlit.app/)
 
 ## Problem statement
 Spam wastes time and carries phishing risk, but a filter that flags real emails is worse than none. This project builds a classifier that catches almost all spam while keeping false positives (legitimate emails marked as spam) low.
@@ -43,7 +32,7 @@ raw email text
 Because the preprocessor, vectorizer and model sit in one scikit-learn `Pipeline`, training and inference use identical code, and the vectorizer is fitted only on training data (no leakage).
 
 ## Technologies
-Python, Pandas, NumPy, scikit-learn, NLTK, Matplotlib, Seaborn, Altair, Streamlit, joblib, pytest, Hugging Face Spaces.
+Python, Pandas, NumPy, scikit-learn, NLTK, Matplotlib, Seaborn, Altair, Streamlit, joblib, pytest, Streamlit Community Cloud.
 
 ## NLP preprocessing
 Lowercasing → HTML, script and style removal (URLs inside tags are kept) → URLs replaced by `urltoken`, email addresses by `emailtoken` → `$`, `!` and numbers kept as `dollartoken`, `exclaimtoken` and `numtoken` → contractions expanded (`can't` → `cannot`) → punctuation removed → stopwords removed **except negations** (`not`, `no`, `never`, ...). Empty, `None`, NaN, bytes and malformed input are handled, and very long emails are truncated at 20,000 characters.
@@ -89,8 +78,8 @@ pytest -v                     # 35 tests
 streamlit run app.py
 ```
 
-## Deployment (Hugging Face Spaces)
-The Space uses the Streamlit SDK with `app.py` as the entry point. The trained pipeline (`models/spam_pipeline.joblib`) and `outputs/` are committed, so the app starts without retraining.
+## Deployment
+Deployed on Streamlit Community Cloud from this repository (`app.py` entry point). The trained pipeline (`models/spam_pipeline.joblib`) and `outputs/` are committed, so the app starts without retraining.
 
 ## Limitations and future work
 - Trained on 1999-2005 corporate email; modern spam and phishing may differ.
