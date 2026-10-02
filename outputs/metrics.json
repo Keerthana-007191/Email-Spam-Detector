@@ -1,0 +1,329 @@
+{
+  "selected_model": "Linear SVC",
+  "selection_rule": "Highest mean spam F1 in stratified CV on the training split; models within 0.002 F1 are tied and the lowest false-positive rate wins, then highest recall.",
+  "best_by_test_f1": "Linear SVC",
+  "dataset": {
+    "cleaning_report": {
+      "rows_loaded": 33716,
+      "dropped_missing": 0,
+      "dropped_empty_text": 51,
+      "dropped_conflicting_labels": 0,
+      "dropped_duplicates": 3203,
+      "rows_final": 30462
+    },
+    "summary": {
+      "n_emails": 30462,
+      "ham": 15910,
+      "spam": 14552,
+      "spam_ratio": 0.4777,
+      "chars_mean": 1477.6,
+      "chars_median": 714.0,
+      "chars_max": 228368
+    },
+    "train_size": 24369,
+    "test_size": 6093
+  },
+  "settings": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 50000,
+    "min_df": 2,
+    "max_df": 0.95,
+    "sublinear_tf": true,
+    "cv_folds": 5,
+    "test_size": 0.2,
+    "random_state": 42,
+    "sklearn_version": "1.9.1"
+  },
+  "cv_results": [
+    {
+      "model": "Logistic Regression",
+      "accuracy_mean": 0.9855554220407207,
+      "accuracy_std": 0.0025971490437410065,
+      "precision_mean": 0.97631076599818,
+      "precision_std": 0.004731074884276619,
+      "recall_mean": 0.9939009707276696,
+      "recall_std": 0.0012852068101368405,
+      "f1_mean": 0.9850220358812999,
+      "f1_std": 0.0026590730722491703,
+      "weighted_f1_mean": 0.9855599662907768,
+      "weighted_f1_std": 0.002595569898500812,
+      "false_positive_rate_mean": 0.02207794653040248,
+      "false_positive_rate_std": 0.004512586973427319
+    },
+    {
+      "model": "Multinomial Naive Bayes",
+      "accuracy_mean": 0.987278903012176,
+      "accuracy_std": 0.00078958672994358,
+      "precision_mean": 0.9874438978417126,
+      "precision_std": 0.0017932958801973266,
+      "recall_mean": 0.9859117595416524,
+      "recall_std": 0.0017697622308028536,
+      "f1_mean": 0.9866747076085677,
+      "f1_std": 0.0008272815012316993,
+      "weighted_f1_mean": 0.9872784452611171,
+      "weighted_f1_std": 0.0007896320156569346,
+      "false_positive_rate_mean": 0.011471069839510956,
+      "false_positive_rate_std": 0.0016762067598047597
+    },
+    {
+      "model": "Linear SVC",
+      "accuracy_mean": 0.9910952725278704,
+      "accuracy_std": 0.0013013174967262506,
+      "precision_mean": 0.9872144032042331,
+      "precision_std": 0.0026205139278926027,
+      "recall_mean": 0.994244355127859,
+      "recall_std": 0.0017099156596122186,
+      "f1_mean": 0.9907137751784714,
+      "f1_std": 0.001348986328431724,
+      "weighted_f1_mean": 0.991096529857314,
+      "weighted_f1_std": 0.0013008935301247466,
+      "false_positive_rate_mean": 0.01178538082002355,
+      "false_positive_rate_std": 0.0024613717312991674
+    }
+  ],
+  "test_results": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.9891678975873953,
+      "precision": 0.9833503227998641,
+      "recall": 0.9941600824458949,
+      "f1": 0.9887256576699692,
+      "weighted_f1": 0.9891701325332827,
+      "false_positive_rate": 0.015399120050282841,
+      "tn": 3133,
+      "fp": 49,
+      "fn": 17,
+      "tp": 2894,
+      "average_precision": 0.998254592844092
+    },
+    {
+      "model": "Multinomial Naive Bayes",
+      "accuracy": 0.9865419333661579,
+      "precision": 0.9889388178361562,
+      "recall": 0.9828237718996908,
+      "f1": 0.9858718125430738,
+      "weighted_f1": 0.986540043335632,
+      "false_positive_rate": 0.01005656819610308,
+      "tn": 3150,
+      "fp": 32,
+      "fn": 50,
+      "tp": 2861,
+      "average_precision": 0.9983710576105901
+    },
+    {
+      "model": "Linear SVC",
+      "accuracy": 0.9932709666830789,
+      "precision": 0.990766073871409,
+      "recall": 0.9951906561319135,
+      "f1": 0.9929734361610968,
+      "weighted_f1": 0.993271575704774,
+      "false_positive_rate": 0.008485229415461974,
+      "tn": 3155,
+      "fp": 27,
+      "fn": 14,
+      "tp": 2897,
+      "average_precision": 0.9993113267002823
+    }
+  ],
+  "confusion_matrices": {
+    "Logistic Regression": [
+      [
+        3133,
+        49
+      ],
+      [
+        17,
+        2894
+      ]
+    ],
+    "Multinomial Naive Bayes": [
+      [
+        3150,
+        32
+      ],
+      [
+        50,
+        2861
+      ]
+    ],
+    "Linear SVC": [
+      [
+        3155,
+        27
+      ],
+      [
+        14,
+        2897
+      ]
+    ]
+  },
+  "top_features": {
+    "spam": [
+      [
+        "exclaimtoken",
+        1.8798071968250194
+      ],
+      [
+        "remove",
+        1.8177310783977223
+      ],
+      [
+        "software",
+        1.7332762556868313
+      ],
+      [
+        "http",
+        1.5861146401683799
+      ],
+      [
+        "no",
+        1.5169180340092479
+      ],
+      [
+        "life",
+        1.3741416071602528
+      ],
+      [
+        "hello",
+        1.3180719236242475
+      ],
+      [
+        "online",
+        1.282773127455114
+      ],
+      [
+        "goodbye",
+        1.2728153984028987
+      ],
+      [
+        "account",
+        1.2622830006908503
+      ],
+      [
+        "meds",
+        1.1567321661892307
+      ],
+      [
+        "sir",
+        1.1436330947367102
+      ],
+      [
+        "quality",
+        1.0808083692761714
+      ],
+      [
+        "money",
+        1.0681858724424644
+      ],
+      [
+        "unsubscribe",
+        1.0535750425756256
+      ],
+      [
+        "iso numtoken",
+        1.0447155701308022
+      ],
+      [
+        "mobile numtoken",
+        1.0365362642445801
+      ],
+      [
+        "removed",
+        1.024235614269759
+      ],
+      [
+        "site",
+        1.0220366264230176
+      ],
+      [
+        "mobile",
+        1.0137453213892238
+      ]
+    ],
+    "legitimate": [
+      [
+        "enron",
+        -5.274119431414473
+      ],
+      [
+        "vince",
+        -3.2498997165162042
+      ],
+      [
+        "louise",
+        -2.957013701899801
+      ],
+      [
+        "thanks",
+        -2.553858222522225
+      ],
+      [
+        "attached",
+        -2.275760226319093
+      ],
+      [
+        "daren",
+        -1.8681838515607163
+      ],
+      [
+        "gas",
+        -1.7476409978396807
+      ],
+      [
+        "doc",
+        -1.7267702408801642
+      ],
+      [
+        "employees",
+        -1.7064364365989084
+      ],
+      [
+        "enron com",
+        -1.6756244627805552
+      ],
+      [
+        "energy",
+        -1.6712323825748863
+      ],
+      [
+        "meeting",
+        -1.5696954009438673
+      ],
+      [
+        "texas",
+        -1.560062881087964
+      ],
+      [
+        "houston",
+        -1.5379676638070179
+      ],
+      [
+        "questions",
+        -1.495109909703691
+      ],
+      [
+        "let know",
+        -1.4622678836524075
+      ],
+      [
+        "congratulations",
+        -1.4523323135664452
+      ],
+      [
+        "dave",
+        -1.42920519550868
+      ],
+      [
+        "password",
+        -1.423462520840684
+      ],
+      [
+        "jim",
+        -1.41379906443884
+      ]
+    ]
+  }
+}

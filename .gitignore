@@ -1,0 +1,15 @@
+# Environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Data (large, and not for the public repo)
+data/
+
+# Secrets and OS files
+.env
+.streamlit/secrets.toml
+.DS_Store
+Thumbs.db
